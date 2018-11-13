@@ -8,6 +8,7 @@ bool verifica_proximidade(char [25][21], int, int, int, int);
 // retorna verdadeiro se as condicoes das duas funcoes forem verdadeiras
 bool verifica_jogada_normal(char TAB[25][21], int j1, int k1, int j2, int k2) {
 	if (verifica_proximidade(TAB, j1, k1, j2, k2) && verifica_casa_preenchida(TAB, j2, k2)) {
+		// faz a jogada
 		TAB[j2][k2] = TAB[j1][k1];
 		TAB[j1][k1] = ' ';
 		return true;

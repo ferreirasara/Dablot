@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// definicoes das cores e efeitos
 #define C_YELLOW    "\033[33m"
 #define NONE        "\033[0m"
 #define BOLD        "\033[1m"
@@ -24,7 +25,7 @@ int menu_jogo() {
 	printf("\t\t\t ║  ");
 	printf(NONE C_YELLOW BOLD"3."NONE" Reiniciar."NONE C_YELLOW"               ║\n");
 	printf("\t\t\t ║  ");
-	printf(NONE C_YELLOW BOLD"4."NONE" Sair."NONE C_YELLOW"                    ║\n");
+	printf(NONE C_YELLOW BOLD"4."NONE" Sair para o menu."NONE C_YELLOW"        ║\n");
 	printf("\t\t\t ╚");
 	for (i = 0; i < 30; i++) {
 		printf("═");

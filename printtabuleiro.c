@@ -1,22 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//cores em ANSI
-
-#define C_BLACK     "\033[30m"
+// definicoes das cores e efeitos
 #define C_RED       "\033[31m"
 #define C_GREEN     "\033[32m"
 #define C_YELLOW    "\033[33m"
-#define C_BLUE      "\033[34m"
-#define C_MAGENTA   "\033[35m"
-#define C_CYAN      "\033[36m"
-#define C_GRAY      "\033[37m"
 #define NONE        "\033[0m"
 #define BOLD        "\033[1m"
-#define HALFBRIGHT  "\033[2m"
-#define UNDERSCORE  "\033[4m"
-#define BLINK       "\033[5m"
-#define BG_YELLOW   "\033[43m"
 
 void imprime_coordenadas(int);
 
@@ -39,9 +29,6 @@ void printtabuleiro(char TAB[25][21]) {
 		for (c = 1; c < 21; c += 4) {
 			TAB[l][c] = '\\';
 		}
-		for (c = 2; c < 21; c += 4) {
-//			TAB[l][c] = ' ';
-		}
 		for (c = 3; c < 21; c += 4) {
 			TAB[l][c] = '/';
 		}
@@ -50,12 +37,6 @@ void printtabuleiro(char TAB[25][21]) {
 		for (c = 0; c < 21; c += 4) {
 			TAB[l][c] = '|';
 		}
-		for (c = 1; c < 21; c += 2) {
-//			TAB[l][c] = ' ';
-		}
-		for (c = 2; c < 21; c += 4) {
-//			TAB[l][c] = ' ';
-		}
 	}
 	for (l = 3; l < 25; l += 4) {
 		for (c = 0; c < 21; c += 4) {
@@ -63,9 +44,6 @@ void printtabuleiro(char TAB[25][21]) {
 		}
 		for (c = 1; c < 21; c += 4) {
 			TAB[l][c] = '/';
-		}
-		for (c = 2; c < 21; c += 4) {
-//			TAB[l][c] = ' ';
 		}
 		for (c = 3; c < 21; c += 4) {
 			TAB[l][c] = '\\';
@@ -81,13 +59,13 @@ void printtabuleiro(char TAB[25][21]) {
 		printf("═");
 	}
 	printf("╗\n");
+	// imprime as coordenadas de x
 	printf("\t\t║    A   B   C   D   E   F   G   H   I   J   K     ║\n");
 	printf("\t\t║ ");
 	for (l = 0; l < 25; l++) {
+		// imprime as coordenadas de y
 		imprime_coordenadas(l);
-		if (l > 17) {
-			//printf("   ");
-		}
+		// imprime as pecas, com cores diferentes
 		for (c = 0; c < 21; c++) {
 			if (TAB[l][c] == 'G' || TAB[l][c] == 'p' || TAB[l][c] == 'R') {
 				printf(C_RED BOLD "%c "NONE, TAB[l][c]);

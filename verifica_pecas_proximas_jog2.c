@@ -5,8 +5,7 @@
 bool verifica_casa(int, int);
 
 bool verifica_pecas_proximas_jog2(char TAB[25][21]) {
-	int l, c, jogadas_possiveis = 0, capturas_possiveis = 0;
-	// sem contar as pecas dos cantos
+	int l, c, capturas_possiveis = 0, jogadas_possiveis = 0;
 	for (l = 0; l < 25; l++) {
 		for (c = 0; c < 21; c++) {
 			if (TAB[l][c] == 'F' || TAB[l][c] == 'f' || TAB[l][c] == 'C') {
@@ -275,11 +274,10 @@ bool verifica_pecas_proximas_jog2(char TAB[25][21]) {
 			}
 		}
 	}
+	// se nao existir jogadas possiveis, retorna verdadeira, se existir, retorna falso
 	if (jogadas_possiveis == 0 && capturas_possiveis == 0) {
-		//printf("Sem movimentos possiveis. Fim de jogo!\n");
 		return true;
 	} else {
-		//printf("Ainda restam %u jogadas possiveis e %d capturas possiveis.\n", jogadas_possiveis, capturas_possiveis);
 		return false;
 	}
 }

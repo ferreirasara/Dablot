@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+// conta as pecas do jogador 1, se nao houver nenhuma, o jogo acabou
 bool verifica_fim_de_jogo1(char TAB[25][21]) {
 	int l, c;
 	int contador_jog1 = 0;

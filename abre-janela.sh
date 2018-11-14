@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc *.c
-mate-terminal --geometry=85x35 -e ./a.out
+gcc *.c -o Dablot.out
+mate-terminal --geometry=85x35 -e ./Dablot.out
 
